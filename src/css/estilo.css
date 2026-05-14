@@ -1,9 +1,9 @@
 :root{
     --color1:#fff;
     --color2:#333;
-    --bgColor1:#f0faff;
+    --bgColor1: #f0faff;
     --bgColor2:#001f3f;
-    --fontFamily: 'Cascadia Code', sans-serif;
+    --fontFamily: "Cascadian Code", sans-serif;
 }
 
 *{
@@ -11,7 +11,6 @@
     padding:0;
     box-sizing:border-box;
 }
-
 body{
     background:var(--bgColor1);
     font-family:var(--fontFamily);
@@ -26,14 +25,12 @@ header{
     color:var(--color1);
     padding:1.5rem;
     text-align:center;
-    box-shadow: 0 10px 10px rgba(0,0,0,0.6)
+    box-shadow:0 10px 10px rgba(0,0,0,0.6);
 }
-
 header h1{
     font-weight:400;
-    letter-spacing:5px;
+    letter-spacing: 5px;
 }
-
 main{
     flex:1;
     display:flex;
@@ -44,18 +41,16 @@ main{
 
 .container{
     background:var(--color1);
-    width:100%;
-    max-width:600px;
+    width:100%;/*largura maxima*/
+    max-width:600px;/*largura maxima utilizada*/
     padding:30px;
     border-radius:20px;
     box-shadow:0 10px 10px rgba(0,0,0,0.6);
     text-align:center;
 }
-
 #canvas{
-    display:none; /*esconder tela*/
+    display:none;/*esconder tela*/
 }
-
 #video{
     width:100%;
     height:auto;
@@ -63,37 +58,36 @@ main{
     background:var(--color2);
     color:var(--color1);
     margin-bottom:20px;
-    /*espelha a câmera para parecer um espelho*/
-    transform:scaleX(1);
+    /*espelha  a camera para parecer um espelho*/
+    transform: scaleX(1);
 }
-
 #btn-texto{
     background:var(--bgColor2);
     color:var(--color1);
     border:none;
     padding:15px 30px;
-    font-size:1.2rem;
+    font-size: 1.2rem;
     border-radius:20px;
     width:70%;
     margin-bottom:30px;
 }
 #btn-texto:hover{
-    transform:translateY(-2px);
-    color:black;
-    background:lightblue;
+    transform:translateY(-5px);
+    color:var(--color2);
+    background:var(--bgColor1);
     font-weight:900;
 }
 #saida{
     background:var(--bgColor1);
     padding:20px;
     border-radius:10px;
-    border-left:5px solid blue;
+    border-left: 5px solid blue; /*cor da linha a esquerda*/
     min-height:100px;
     text-align:left;
-    word-wrap:break-word;
+    word-wrap:break-word;/*espaçamento entre Palavras*/
     color:var(--color2);
 }
-footer{
+footer p{
     display:flex;
     justify-content:center;
     font-weight:700;
