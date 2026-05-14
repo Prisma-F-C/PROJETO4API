@@ -1,5 +1,5 @@
 // Declarações dos elementos HTML para o DOM
-const videoElemento = document.getElementeById("video");
+const videoElemento = document.getElementById("video");
 const botaoScanner = document.getElementById('btn-texto');
 const resultado = document.getElementById('saida');
 const canvas = document.getElementById('canvas')
@@ -11,7 +11,7 @@ async function configurarCamera(){
         // solicita a permissão para acessar a câmera do usuário
         const midia=await navigator.mediaDevices.getUserMedia({
             // habilita a câmera traseira do celular
-            video:{facingMOde:"environment"},
+            video:{facingMode:"environment"},
             audio=false
         })
         // atribui o fluxo da câmera ao elemento de 
@@ -40,21 +40,21 @@ botaoScanner.onclick=async()=>{
     canvas.height=videoElemento.videoHeight;
 
     // desenha o frame atual do vídeo dentro do canvas(tira a foto)
-    contexto.drawImage(videoElemento,0,0,canvas,canvas.height);
+    contexto.drawImage(videoElemento,0,0,canvas.width,canvas.height);
 
     // processando com a API Tesseract
     try{
         const  {data:{text}}=await Tesseract.recognize(
             canvas,
             'por',
-            {looger: m=>console.log(m)} //mostra no log
+            {logger: m=>console.log(m)} //mostra no log
         )
-        resultado.innerText=text.trim().lenght > 0 ? text : "Não foi possível identificar o texto."
+        resultado.innerText=text.trim().length > 0 ? text : "Não foi possível identificar o texto."
     }catch(erro){
-        resultado.innerText="Erroo no processamento", erro.message;
+        resultado.innerText="Erro no processamento", erro.message;
     }
     finally{
         //habilita o botão para uma nova leitura
         botaoScanner.disabled=false;
     }
-}
+};
