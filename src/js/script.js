@@ -19,7 +19,7 @@ async function configurarCamera(){
         videoElemento.srcObject=midia;
 
     }catch(erro){
-        resultado.innerText="Erro ao acessar a câmera",erro;
+        resultado.innerText="Erro ao acessar a câmera: " + erro;
     }
 }
 
@@ -51,7 +51,7 @@ botaoScanner.onclick=async()=>{
         )
         resultado.innerText=text.trim().length > 0 ? text : "Não foi possível identificar o texto."
     }catch(erro){
-        resultado.innerText="Erro no processamento", erro.message;
+        resultado.innerText="Erro no processamento:" + erro.message;
     }
     finally{
         //habilita o botão para uma nova leitura
